@@ -1,0 +1,29 @@
+#!/bin/csh
+#
+# Use current working directory
+#$ -cwd
+# Run job through csh shell
+#$ -S /bin/csh
+#$ -V
+
+# -e stdbf.err
+# -o stdbf.out
+#$ -e stdbf.out
+#$ -o std.bferr
+#$ -M tmslqh@nus.edu.sg
+
+# job name
+#$ -N ROMS-SS
+# pe request for MPICH. Set your number of processors here.
+#$ -pe mpi_fillup 8
+
+echo "Got $NSLOTS processors."
+echo "Machines:"
+cat $TMPDIR/machines
+
+# Use full pathname to make sure we are using the right mpirun
+#
+echo
+#/opt/mpich2/mpich2-1.0.8-intel/bin/mpiexec -machinefile $TMPDIR/machines -n $NSLOTS ./roms romsbf.in > listout
+/opt/mpich2/mpich2-1.0.8-intel/bin/mpiexec -machinefile $TMPDIR/machines -n $NSLOTS ./roms romsbf.in > statusbf.lst
+echo
