@@ -1,0 +1,20 @@
+-catch_rsh /opt/sge/default/spool/ceto-c01/active_jobs/17652.1/pe_hostfile
+ceto-c01
+ceto-c01
+ceto-c01
+ceto-c01
+ceto-c01
+ceto-c01
+ceto-c01
+ceto-c01
+Got 8 processors.
+Machines:
+ceto-c01
+ceto-c01
+ceto-c01
+ceto-c01
+ceto-c01
+ceto-c01
+ceto-c01
+ceto-c01
+
